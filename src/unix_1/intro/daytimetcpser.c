@@ -8,7 +8,7 @@
 #include <stdlib.h>
 
 const int MAX_LINE = 4096;
-const char* IP_ADDR = "139.196.215.162";  // aliyun 轻量级服务器
+const char* IP_ADDR = "127.0.0.1";  // 本地服务器
 const int LISTENQ = 1024;
 
 int Socket(int family, int type, int protocol)
@@ -78,7 +78,7 @@ int main()
 	bzero(&servaddr, sizeof(servaddr));
 	servaddr.sin_family = AF_INET;
     servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
-	servaddr.sin_port   = htons(13);	/* daytime server */
+	servaddr.sin_port   = htons(10013);	/* daytime server */
 
     Bind(listenfd, (struct sockaddr*) &servaddr, sizeof(servaddr));
 
